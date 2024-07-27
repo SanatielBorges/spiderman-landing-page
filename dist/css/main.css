@@ -106,7 +106,7 @@ body {
 
 /* Inicio Main Section */
 .main {
-  background-image: url("../../imagens/peter-e-mary.jpg");
+  background-image: url("/src/images/peter-e-mary.jpg");
   background-size: cover;
   background-position: center;
   height: calc(100vh - 20px);
@@ -169,7 +169,7 @@ body {
 @media (max-width: 540px) {
   .main {
     width: 100%;
-    background-image: url("../../imagens/back-responsive.jfif");
+    background-image: url("/src/images/back-responsive.jfif");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
