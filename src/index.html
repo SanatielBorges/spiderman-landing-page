@@ -20,18 +20,20 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
     <header class="header">
       <div class="header__logo">
         <a href="#"
-          ><img src="../src/images/logo.jpg" alt="Logo do Homem-Aranha"
+          ><img src="../src/images/hbo-max.png" alt="Logo do Homem-Aranha"
         /></a>
       </div>
-      <button class="header__toggle" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-        <!-- Ícone do menu hambúrguer -->
-      </button>
+
       <nav class="header__nav">
         <ul>
           <li><a href="#home">Home</a></li>
@@ -42,6 +44,12 @@
           <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
+
+      <div class="menu-hamburguer">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </header>
 
     <main class="main">
@@ -79,10 +87,8 @@
     </main>
 
     <section class="box">
-      <div class="title-and-desc">
-        <h2>MARATONA HOMEM-ARANHA</h2>
-        <p>Aperte o PLAY e divirta-se!</p>
-      </div>
+      <h2>MARATONA HOMEM-ARANHA</h2>
+      <p>Aperte o PLAY e divirta-se!</p>
 
       <section class="carousel">
         <div class="multiple-items">
@@ -90,9 +96,7 @@
             <img src="../imagens/homem-aranha.jpg" alt="Homem-Aranha" />
             <div class="buttons-container">
               <button class="play-avaliation animation">Assistir</button>
-              <button class="play-avaliation cursor-none cursor-none">
-                IMDb 7.3
-              </button>
+              <button class="play-avaliation cursor-none">IMDb 7.3</button>
             </div>
           </div>
           <div>
