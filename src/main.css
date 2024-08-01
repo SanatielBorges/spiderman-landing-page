@@ -1,0 +1,524 @@
+@charset "UTF-8";
+/* Estilos gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos do Header */
+.header {
+  background-color: #20232a;
+  color: #ffffff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.header__logo img {
+  height: 30px;
+  width: auto;
+}
+
+.header__nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.header__nav ul li {
+  margin-right: 20px;
+}
+
+.header__nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.header__nav ul li a:hover {
+  text-decoration: underline;
+}
+
+.menu-hamburguer {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 30px;
+}
+
+.menu-hamburguer span {
+  height: 2px;
+  width: 100%;
+  background-color: #fff;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* FLEXIBILIDADE DO MENU-HAMBURGUER */
+@media (max-width: 768px) {
+  .header__nav ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background-color: #20232a;
+    position: absolute;
+    margin-top: 50px;
+    top: 0;
+    left: 0;
+    border-top: 1px solid #fff;
+  }
+  .header__nav ul.active {
+    display: flex;
+  }
+  .header__nav ul.active li {
+    margin: 10px 0;
+  }
+  .header__nav ul.active a:hover {
+    background-color: #f39c12;
+    padding: 5px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: all ease 0.4s;
+  }
+  .menu-hamburguer {
+    display: flex;
+  }
+}
+/* APLICANDO RESPONSIVIDADE NO HEADER */
+@media (max-width: 768px) {
+  .header {
+    width: 100%;
+  }
+}
+/* Ajuste para evitar a barra de rolagem horizontal */
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* Inicio Main Section */
+.main {
+  background-image: url("/src/images/peter-e-mary.jpg");
+  background-size: cover;
+  background-position: center;
+  height: calc(100vh - 20px);
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.main img {
+  height: 350px;
+  border-radius: 5px;
+}
+
+.film-overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 40px;
+  max-width: 920px;
+  width: 100%;
+  border-radius: 5px;
+  text-align: justify;
+  color: #ffffff;
+}
+
+.film-details {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.film-image {
+  margin-right: 20px;
+}
+
+.film-info {
+  text-align: left;
+}
+
+.subtitle {
+  margin-bottom: 5px;
+}
+
+.subtitle-bold {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.film-actions {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.film-actions i {
+  margin-right: 10px;
+}
+
+/* RESPONSIVIDADE DO MAIN */
+@media (max-width: 540px) {
+  .main {
+    width: 100%;
+    background-image: url("/src/images/back-responsive.jfif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .film-image img {
+    width: 150px;
+    height: auto;
+  }
+  h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 12px;
+  }
+}
+/* Estilos para o main responsiva 400px */
+@media (max-width: 400px) {
+  .main .film-overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+  .main .film-image img {
+    width: 250px;
+    height: 200px;
+  }
+  .main .film-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .main .film-details .film-image,
+  .main .film-details .film-info {
+    width: 100%;
+    text-align: center;
+  }
+  .main .film-details .film-info h2 {
+    font-size: 1.2em;
+  }
+  .main .film-details .film-info .subtitle,
+  .main .film-details .film-info .subtitle-bold {
+    font-size: 0.9em;
+  }
+  .main .film-description {
+    width: 100%;
+    text-align: justify;
+  }
+  .main .film-details .film-actions {
+    display: flex;
+    justify-content: center;
+  }
+  .main .film-details .film-actions button,
+  .main .film-details .film-actions i {
+    margin: 5px;
+  }
+}
+/* RESPONSIVIDADE DO MAIN */
+/* Estilos para o botão com ícone */
+.film-actions button {
+  background-color: #fcb045;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 4px;
+  padding: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease;
+}
+
+.film-actions button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  transition: left 0.3s ease;
+  z-index: 1;
+}
+
+.film-actions button:hover::before {
+  left: 0;
+}
+
+.film-actions button:hover {
+  color: #ffffff;
+}
+
+.film-actions button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.3s ease;
+  z-index: 0;
+}
+
+.film-actions button:hover::after {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+i.fa-heart {
+  margin-left: 10px;
+  border: 1px solid #ff0000;
+  width: 35px;
+  height: 35px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-radius: 50%;
+  font-size: 24px;
+  color: #fff;
+  padding-top: 3px;
+  cursor: pointer;
+}
+
+i.fa-heart:hover {
+  border: 1px solid #fff;
+  color: #ff0000;
+  transition: all ease 0.6s;
+}
+
+.film-description {
+  margin-top: 20px;
+}
+
+/* Fim da Main */
+/* Inicio estilização do box */
+html {
+  overflow-x: hidden;
+}
+
+.box {
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  padding-right: 18px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  text-shadow: 1px 2px 2px #b40431;
+}
+
+.box p {
+  margin-bottom: 15px;
+}
+
+.title-and-desc {
+  margin: 0 auto;
+  width: 850px;
+}
+
+/* Oculta as setas padrão */
+.slick-prev,
+.slick-next {
+  display: none;
+}
+
+/* Estilo das setas personalizadas */
+.carousel .custom-prev,
+.carousel .custom-next {
+  width: 40px;
+  height: 40px;
+  background-color: #fcb045;
+  border-radius: 50%;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.carousel .custom-prev {
+  left: 30px;
+}
+
+.carousel .custom-next {
+  right: 10px;
+}
+
+/* Efeito de hover nas setas */
+.carousel .custom-prev:hover,
+.carousel .custom-next:hover {
+  background-color: #f39c12;
+  color: #ffffff;
+}
+
+.carousel .custom-prev::before {
+  content: "\f053";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.carousel .custom-next::before {
+  content: "\f054";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.carousel {
+  margin: 0 auto;
+  margin-top: -20px;
+  position: relative;
+}
+
+.carousel div {
+  padding: 0px;
+  margin: 10px;
+  position: relative;
+}
+
+.carousel img {
+  width: 100%;
+  height: 410px;
+  border-radius: 10px;
+}
+
+/* ESTILO DOS BOTÕES ASSISTIR E IMDb */
+.buttons-container {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Estilos básicos para todos os botões */
+.buttons-container button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* Estilo e animação para o botão "Assistir" */
+.animation {
+  margin-left: -20px;
+}
+
+.buttons-container .animation {
+  background-color: #fcb045;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.buttons-container .animation:hover {
+  background-color: #f39c12;
+  transform: scale(1.05);
+}
+
+.buttons-container .animation:focus {
+  outline: none;
+}
+
+.buttons-container .animation i {
+  font-size: 16px;
+}
+
+.buttons-container .cursor-none {
+  background-color: #333333;
+}
+
+.buttons-container .cursor-none {
+  cursor: auto;
+}
+
+/* RESPONSIVIDADE DA BOX */
+@media (max-width: 820px) {
+  .buttons-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    margin: 0;
+  }
+}
+@media (max-width: 820px) {
+  .cursor-none {
+    margin-left: -20px;
+  }
+}
+/* ESTILO DO FOOTER */
+.footer {
+  background-color: #333; /* Cor de fundo do rodapé */
+  color: #fff; /* Cor do texto */
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.footer .social-icons {
+  margin: 10px 0;
+}
+
+.footer .social-icons i {
+  font-size: 24px; /* Tamanho dos ícones */
+  margin: 0 15px; /* Espaçamento entre os ícones */
+  color: #fff; /* Cor padrão dos ícones */
+  transition: color 0.3s ease; /* Transição suave para a cor dos ícones */
+}
+
+.footer .social-icons i:hover {
+  color: #ddd; /* Cor ao passar o mouse */
+}
+
+.footer .social-icons .fa-whatsapp:hover {
+  color: #25d366; /* Cor do WhatsApp ao passar o mouse */
+}
+
+.footer .social-icons .fa-facebook-f:hover {
+  color: #1877f2; /* Cor do Facebook ao passar o mouse */
+}
+
+.footer .social-icons .fa-instagram:hover {
+  color: #c13584; /* Cor do Instagram ao passar o mouse */
+}
+
+.footer .social-icons .fa-youtube:hover {
+  color: #ff0000; /* Cor do YouTube ao passar o mouse */
+}
+
+/* FIM ESTILO FOOTER */
